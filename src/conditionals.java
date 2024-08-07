@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Tarea1 {
+public class conditionals {
   public static void main(String[] args) {
 
     Scanner scanner = new Scanner(System.in); // Abre el scanner para que el usuario pueda ingresar datos
