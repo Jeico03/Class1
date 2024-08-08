@@ -106,14 +106,30 @@ public class conditionals {
     scanner.close();
   }
 
-  public static void numbers(Scanner scanner)
+  public static void numbers(Scanner scanner) {
+    System.out.println("Ingrese un número");
+    int pairs = scanner.nextInt();
 
-  {
-
+    if (pairs % 2 == 0) {
+      System.out.println("Su número es par");
+    } else {
+      System.out.println("Su número es impar");
+    }
+    scanner.close();
   }
 
   public static void negative(Scanner scanner) {
+    System.out.println("Ingrese un número");
+    int positive = scanner.nextInt();
 
+    if (positive >= 1) {
+      System.out.println("Su número es positivo");
+    } else if (-1 <= positive) {
+      System.out.println("Su número es negativo");
+    } else {
+      System.out.println("Su número es 0");
+    }
+    scanner.close();
   }
 
   public static void triangle(Scanner scanner) {
