@@ -42,19 +42,17 @@ public class conditionals {
     scanner.close();
   }
 
-   System.out.  public static void ageverifier(Scanner scanner) {
+  public static void ageverifier(Scanner scanner) {
     System.out.println("Digite su edad:");
 
-    Scanner scanner2 = new Scanner(System.in); // Abre el scanner para que el usuario pueda ingresar datos
-
-    System.out.println("Digite su edad"); // se le pregunta al usuario su edad :v
     int age = scanner.nextInt();
 
     if (age >= 18) {
-     System.out.println("Eres mayor de edad");
-
+      System.out.println("Eres mayor de edad");
     } else {
       System.out.println("Eres menor de edad");
+
+      scanner.close();
     }
   }
 
