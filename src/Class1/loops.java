@@ -5,54 +5,55 @@ import java.util.Scanner;
 public class loops {
 
   public static void main(String[] args) {
-    loops1();
+    loops1(100);
   }
 
-  public static void loops1() { // app that shows the first 100 integers starting from 1.
-    for (int loop1 = 1; loop1 <= 100; loop1++) {
+  public static void loops1(int limit) { // app that shows the first 100 integers starting from 1.
+    for (int loop1 = 1; loop1 <= limit; loop1++) {
       System.out.println(loop1);
     }
-    loops2();
+    loops2(1);
   }
 
-  public static void loops2() { // app that shows the first 100 numbers in reverse, that is, from 100 to 1
-    for (int loop2 = 100; loop2 >= 1; loop2--) {
+  public static void loops2(int inverse) { // app that shows the first 100 numbers in reverse, that is, from 100 to 1
+    for (int loop2 = 100; loop2 >= inverse; loop2--) {
       System.out.println(loop2);
     }
-    loops3();
+    loops3(100);
   }
 
-  public static void loops3() { // app that shows only even numbers in the range from 1 to 100
-    for (int loop3 = 1; loop3 <= 100; loop3++) {
+  public static void loops3(int pair) { // app that shows only even numbers in the range from 1 to 100
+    for (int loop3 = 1; loop3 <= pair; loop3++) {
       if (loop3 % 2 == 0) {
         System.out.println(loop3);
       }
     }
-    loops4();
+    loops4(100);
   }
 
-  public static void loops4() { // app that shows the sum of numbers from 1 to 100
+  public static void loops4(int sum) { // app that shows the sum of numbers from 1 to 100
     int addition = 0;
-    for (int loop4 = 1; loop4 <= 100; loop4++) {
+    for (int loop4 = 1; loop4 <= sum; loop4++) {
       addition += loop4;
     }
     System.out.println("The sum of the numbers from 1 to 100 results in " + addition);
-    loops5();
+    loops5(100);
   }
 
-  public static void loops5() { // app that shows the sum of odd numbers from 1 to 100
+  public static void loops5(int noPair) { // app that shows the sum of odd numbers from 1 to 100
     int sum = 0;
-    for (int loop5 = 1; loop5 <= 100; loop5++) {
+    for (int loop5 = 1; loop5 <= noPair; loop5++) {
       if (loop5 % 2 != 0) {
         sum += loop5;
       }
     }
     System.out.println("The sum of odd numbers from 1 to 100 is: " + sum);
-    loops6();
+    loops6(-1);
   }
 
-  public static void loops6() { // app that asks for numbers as long as a negative one is not entered. At the
-                                // end, the sum of the numbers entered should be displayed
+  public static void loops6(int negative) { // app that asks for numbers as long as a negative one is not entered. At
+                                            // the
+    // end, the sum of the numbers entered should be displayed
     Scanner scanner = new Scanner(System.in);
     int accumulation = 0;
     int number = 0;
@@ -60,7 +61,7 @@ public class loops {
     while (true) {
       System.out.println("Enter a number");
       number = scanner.nextInt();
-      if (number <= -1) {
+      if (number <= negative) {
         break;
       }
       accumulation += number;
@@ -68,10 +69,10 @@ public class loops {
 
     System.out.println("The sum of number entered is " + accumulation);
     scanner.close();
-    loops7();
+    loops7(0);
   }
 
-  public static void loops7() { // calculator app
+  public static void loops7(int Calculator) { // calculator app
     Scanner scanner = new Scanner(System.in);
 
     while (true) {
