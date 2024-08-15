@@ -136,25 +136,19 @@ public class finalProject {
 
   public static void multiplicationTableApp(Scanner scanner) {
 
-    System.out.println("Type a number to create its multiplication table:");
-    final int FIRST_VALUE = scanner.nextInt();
+    System.out.println("Type the first number:");
+    int firstNumber = scanner.nextInt();
+
+    System.out.println("Type the second number:");
+    int secondNumber = scanner.nextInt();
 
     System.out.print("\033[H\033[2J");
     System.out.flush();
 
-    System.out.println("Type the range for the multiplication table, example: 10 for 1x10):");
-    int range = scanner.nextInt();
-
-    System.out.print("\033[H\033[2J");
-    System.out.flush();
-
-    scanner.nextLine();
-
-    int multiplier = 1;
-
-    while (multiplier <= range) {
-      System.out.println(FIRST_VALUE + " x " + multiplier + " = " + (FIRST_VALUE * multiplier));
-      multiplier++;
+    for (int i = 1; i <= firstNumber; i++) {
+      for (int j = 1; j <= secondNumber; j++) {
+        System.out.println(i + " x " + j + " = " + (i * j));
+      }
     }
 
     scanner.nextLine();
