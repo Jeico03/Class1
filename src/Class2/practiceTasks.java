@@ -7,7 +7,6 @@ public class practiceTasks {
     // #region mini project 1 class 2
 
     Persona persona1 = new Persona();
-
     persona1.name = "Jeico";
     persona1.lastName = "Arias Brito";
     persona1.Age = 17;
@@ -83,13 +82,31 @@ class vehicle {
 }
 
 class Automobile extends vehicle {
+  String color;
+  boolean hasSunroof;
 
+  public String getInformation() {
+    return "Brand: " + brand + " Model: " + model + " Year: " + year + " color: " + color + "Has sunroof:" + hasSunroof;
+  }
 }
 
 class van extends vehicle {
+  String seats;
+  int numberOfDoors;
 
+  public String getInformation() {
+    return "Brand: " + brand + " Model: " + model + " Year: " + year + " seats " + seats + " numberOfDoors "
+        + numberOfDoors;
+  }
 }
 
 class motorcycle extends vehicle {
+  String color;
+  boolean isElectric;
+
+  public String getInformation() {
+    return "Brand: " + brand + " Model: " + model + " Year: " + year + " color: " + color + " Is electric: "
+        + isElectric;
+  }
 
 }
