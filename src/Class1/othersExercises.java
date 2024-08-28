@@ -2,7 +2,6 @@ package Class1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -126,9 +125,11 @@ public class othersExercises {
 
     prueba [0] = 12;
 
-    int prue = prueba [0];
+    ArrayList <Integer> numbers = new ArrayList<>();
     
-    ArrayList <Integer> numbers = new ArrayList<>(); 
+    numbers.add(10);
+
+    
 
   }
 
