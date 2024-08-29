@@ -8,6 +8,13 @@
 			"type": "java",
 			"name": "projectFinal",
 			"request": "launch",
+			"mainClass": "Class2.ProjectFinal.projectFinal",
+			"projectName": "tarea1_f4f51673"
+		},
+		{
+			"type": "java",
+			"name": "projectFinal",
+			"request": "launch",
 			"mainClass": "Class2.projectFinal",
 			"projectName": "tarea1_f4f51673"
 		},

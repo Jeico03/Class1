@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import Class2.ProjectFinal.Persona;
+
 public class practiceTasks {
 
   public static void main(String[] args) {
