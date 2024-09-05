@@ -6,8 +6,10 @@ import java.util.Scanner;
 
 public class projectFinal {
   public static void main(String[] args) {
-    Service<Empleado> service = new Service<>();
+    Service service = new Service();
     Scanner scanner = new Scanner(System.in);
+
+    int option;
 
     while (true) {
       System.out.println("Employee manager");
@@ -17,7 +19,7 @@ public class projectFinal {
       System.out.println("4. Show existing employees who are in the system");
       System.out.println("5. Close the program");
 
-      int option = scanner.nextInt();
+      option = scanner.nextInt();
 
       System.out.print("\033[H\033[2J");
       System.out.flush();
@@ -25,13 +27,13 @@ public class projectFinal {
       try {
         switch (option) {
           case 1:
-            Empleado empleado = service.askUserForData();
+            Empleado empleado = service.askUserForData(scanner);
             service.addEmpleado(empleado);
             break;
           case 2:
             System.out.println("Enter employee index to update:");
             int indexToUpdate = scanner.nextInt();
-            Empleado updatedEmpleado = service.askUserForData();
+            Empleado updatedEmpleado = service.askUserForData(scanner);
             service.updateEmpleado(indexToUpdate, updatedEmpleado);
             break;
           case 3:
@@ -62,16 +64,17 @@ public class projectFinal {
 
 }
 
-interface IGestorEmpleado<T> {
-  void addEmpleado(T empleado);
+interface IGestorEmpleado {
 
-  void updateEmpleado(int index, T empleado);
+  void addEmpleado(Empleado empleado);
+
+  void updateEmpleado(int index, Empleado empleado);
 
   void deleteEmpleado(int index);
 
   void showEmpleados();
 
-  T askUserForData();
+  Empleado askUserForData(Scanner scanner);
 }
 
 class Persona {
@@ -220,13 +223,13 @@ class CRUD<T> {
   }
 }
 
-class GestorEmpleado<T extends Empleado> extends CRUD<T> implements IGestorEmpleado<T> {
+class GestorEmpleado extends CRUD<Empleado> implements IGestorEmpleado {
 
-  public void addEmpleado(T empleado) {
+  public void addEmpleado(Empleado empleado) {
     create(empleado);
   }
 
-  public void updateEmpleado(int index, T empleadoActualizado) {
+  public void updateEmpleado(int index, Empleado empleadoActualizado) {
     update(index, empleadoActualizado);
   }
 
@@ -235,14 +238,13 @@ class GestorEmpleado<T extends Empleado> extends CRUD<T> implements IGestorEmple
   }
 
   public void showEmpleados() {
-    List<T> empleados = read();
-    for (T empleado : empleados) {
+    List<Empleado> empleados = read();
+    for (Empleado empleado : empleados) {
       System.out.println(empleado.toString());
     }
   }
 
-  public T askUserForData() {
-    Scanner scanner = new Scanner(System.in);
+  public Empleado askUserForData(Scanner scanner) {
 
     System.out.println("Enter employee name:");
     String name = scanner.next();
@@ -253,13 +255,14 @@ class GestorEmpleado<T extends Empleado> extends CRUD<T> implements IGestorEmple
     System.out.println("Enter employee salary:");
     int salary = scanner.nextInt();
 
-    return (T) new Empleado(name, lastName, age, salary);
+    return new Empleado(name, lastName, age, salary);
+
   }
 }
 
-class Service<T extends Empleado> extends GestorEmpleado<T> {
+class Service extends GestorEmpleado {
 
-  public void addEmpleado(T empleado) {
+  public void addEmpleado(Empleado empleado) {
     if (empleado.getAge() >= 18) {
       super.addEmpleado(empleado);
       System.out.println("Employee added successfully.");
